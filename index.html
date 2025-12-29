@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Gaming Technologies Private Limited</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    .slide-in {
+      animation: slideIn 0.8s ease-out forwards;
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .game-icon {
+      transition: all 0.4s ease;
+    }
+    
+    .game-icon:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .stat-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .stat-card:hover::before {
+      left: 100%;
+    }
+    
+    .nav-link {
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link.active {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255,255,255,0.15);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div class="w-full h-full"><!-- Navigation Bar -->
+   <nav class="gradient-bg text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+     <div class="flex items-center justify-between">
+      <div class="text-2xl font-bold">
+       🎮 GGTPL
+      </div>
+      <div class="flex gap-2"><a href="#home" class="nav-link px-4 py-2 rounded-lg font-semibold active" data-page="home">Home</a> <a href="#about" class="nav-link px-4 py-2 rounded-lg font-semibold" data-page="about">About</a> <a href="#games" class="nav-link px-4 py-2 rounded-lg font-semibold" data-page="games">Games</a> <a href="#services" class="nav-link px-4 py-2 rounded-lg font-semibold" data-page="services">Services</a> <a href="#team" class="nav-link px-4 py-2 rounded-lg font-semibold" data-page="team">Team</a> <a href="#contact" class="nav-link px-4 py-2 rounded-lg font-semibold" data-page="contact">Contact</a>
+      </div>
+     </div>
+    </div>
+   </nav><!-- Home Page -->
+   <div id="home-page" class="page active">
+    <header class="gradient-bg text-white py-20 px-6 relative overflow-hidden">
+     <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full -mr-48 -mt-48"></div>
+     <div class="absolute bottom-0 left-0 w-80 h-80 bg-white opacity-5 rounded-full -ml-40 -mb-40"></div>
+     <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-12 fade-in">
+       <div class="mb-6 float-animation"><span class="text-8xl">🎮</span>
+       </div>
+       <h1 id="company-name" class="text-6xl font-extrabold mb-4 leading-tight">Grand Gaming Technologies Private Limited</h1>
+       <p id="tagline" class="text-2xl opacity-90 mb-4">Building Amazing Gaming Experiences</p>
+       <p id="hero-description" class="text-lg opacity-80 max-w-2xl mx-auto">Registered company - Developed by Mohammad Daniyal Shaikh</p>
+      </div>
+     </div>
+    </header>
+    <section class="py-20 px-6 bg-white">
+     <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-5xl font-bold mb-8 fade-in">Welcome to GGTPL</h2>
+      <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-12">We create exceptional gaming experiences across multiple platforms and genres. From immersive open-world adventures to competitive multiplayer battles, our team is dedicated to pushing the boundaries of interactive entertainment.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="bg-gradient-to-br from-purple-100 to-purple-200 p-8 rounded-2xl card-hover">
+        <div class="text-5xl mb-4">
+         🎯
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Innovation</h3>
+        <p class="text-gray-700">Cutting-edge game development</p>
+       </div>
+       <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-8 rounded-2xl card-hover">
+        <div class="text-5xl mb-4">
+         🏆
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Quality</h3>
+        <p class="text-gray-700">Excellence in every project</p>
+       </div>
+       <div class="bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-2xl card-hover">
+        <div class="text-5xl mb-4">
+         🌟
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Passion</h3>
+        <p class="text-gray-700">Driven by love for gaming</p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- About Page -->
+   <div id="about-page" class="page">
+    <section class="py-20 px-6 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <h1 id="about-title" class="text-5xl font-bold text-center mb-12 fade-in">About GGTPL</h1>
+      <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-10 rounded-3xl shadow-xl card-hover mb-12">
+       <p id="about-description" class="text-xl text-gray-700 leading-relaxed text-center">Grand Gaming Technologies Private Limited builds exceptional games across multiple genres including Roleplay, Horror, Adventure, Online Multiplayer, Single Player, Racing, Open World, FPS, Shooting Multiplayer, 5V5 Action, and both 2D &amp; 3D games. We're passionate about creating immersive gaming experiences that players love.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+       <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+        <h3 class="text-3xl font-bold text-purple-600 mb-4">Our Mission</h3>
+        <p class="text-lg text-gray-700">To create unforgettable gaming experiences that bring joy, excitement, and connection to players worldwide through innovative game development and passionate storytelling.</p>
+       </div>
+       <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+        <h3 class="text-3xl font-bold text-indigo-600 mb-4">Our Vision</h3>
+        <p class="text-lg text-gray-700">To become a leading game development company recognized for pushing creative boundaries and delivering world-class gaming experiences across all platforms and genres.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Games Page -->
+   <div id="games-page" class="page">
+    <section class="py-20 px-6 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <h1 class="text-5xl font-bold text-center mb-16 slide-in">Our Game Categories</h1>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+       <div class="stat-card bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🎭
+        </div>
+        <h3 class="text-xl font-bold">Roleplay</h3>
+        <p class="text-sm opacity-90 mt-2">Immersive character-driven experiences</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-red-500 to-red-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         👻
+        </div>
+        <h3 class="text-xl font-bold">Horror</h3>
+        <p class="text-sm opacity-90 mt-2">Spine-chilling adventures</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-green-500 to-green-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🗺️
+        </div>
+        <h3 class="text-xl font-bold">Adventure</h3>
+        <p class="text-sm opacity-90 mt-2">Epic quests and exploration</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🌐
+        </div>
+        <h3 class="text-xl font-bold">Online Multiplayer</h3>
+        <p class="text-sm opacity-90 mt-2">Connect and compete globally</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-indigo-500 to-indigo-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🎮
+        </div>
+        <h3 class="text-xl font-bold">Single Player</h3>
+        <p class="text-sm opacity-90 mt-2">Solo story-driven experiences</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-yellow-500 to-yellow-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🏎️
+        </div>
+        <h3 class="text-xl font-bold">Racing</h3>
+        <p class="text-sm opacity-90 mt-2">High-speed thrills</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-pink-500 to-pink-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🌍
+        </div>
+        <h3 class="text-xl font-bold">Open World</h3>
+        <p class="text-sm opacity-90 mt-2">Vast explorable universes</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-orange-500 to-orange-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🎯
+        </div>
+        <h3 class="text-xl font-bold">FPS</h3>
+        <p class="text-sm opacity-90 mt-2">First-person action</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-teal-500 to-teal-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🔫
+        </div>
+        <h3 class="text-xl font-bold">Shooting Multiplayer</h3>
+        <p class="text-sm opacity-90 mt-2">Team-based combat</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-cyan-500 to-cyan-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         ⚔️
+        </div>
+        <h3 class="text-xl font-bold">5V5 Action</h3>
+        <p class="text-sm opacity-90 mt-2">Competitive team battles</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-rose-500 to-rose-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         📱
+        </div>
+        <h3 class="text-xl font-bold">2D Games</h3>
+        <p class="text-sm opacity-90 mt-2">Classic side-scrolling fun</p>
+       </div>
+       <div class="stat-card bg-gradient-to-br from-violet-500 to-violet-700 p-8 rounded-2xl text-white text-center card-hover">
+        <div class="text-6xl mb-4 game-icon">
+         🎲
+        </div>
+        <h3 class="text-xl font-bold">3D Games</h3>
+        <p class="text-sm opacity-90 mt-2">Modern immersive graphics</p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Services Page -->
+   <div id="services-page" class="page">
+    <section class="py-20 px-6 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <h1 id="services-title" class="text-5xl font-bold text-center mb-16 fade-in">Our Services</h1>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+       <div class="bg-gradient-to-br from-purple-100 to-indigo-100 p-10 rounded-3xl shadow-xl card-hover">
+        <div class="text-6xl mb-6">
+         💡
+        </div>
+        <h3 id="game-request-title" class="text-3xl font-bold text-gray-800 mb-4">Want to Create a Game?</h3>
+        <p id="game-request-description" class="text-lg text-gray-700 mb-6">If you want to create a game of any type, you can simply contact the owner of the company. We'll work with you to bring your vision to life!</p>
+        <div class="bg-white p-6 rounded-xl">
+         <h4 class="font-bold text-xl mb-3 text-gray-800">What We Offer:</h4>
+         <ul class="space-y-2 text-gray-700">
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Custom game development</li>
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Professional consultation</li>
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Full project support</li>
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Quality assurance</li>
+         </ul>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-green-100 to-teal-100 p-10 rounded-3xl shadow-xl card-hover">
+        <div class="text-6xl mb-6">
+         👥
+        </div>
+        <h3 id="join-title" class="text-3xl font-bold text-gray-800 mb-4">Join Our Team</h3>
+        <p class="text-lg text-gray-700 mb-6">Become part of GGTPL and help shape the future of gaming!</p>
+        <div class="bg-white p-6 rounded-xl">
+         <h4 class="font-bold text-xl mb-3 text-gray-800">Required Documents:</h4>
+         <ul class="space-y-2 text-gray-700 mb-4">
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Full Name</li>
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Aadhar or School ID</li>
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Address</li>
+          <li class="flex items-center"><span class="mr-3 text-2xl">✓</span> Phone Number</li>
+         </ul>
+         <p class="text-gray-700 font-semibold bg-purple-50 p-4 rounded-lg">After verification, you will receive your respected role in the company. You can dm the owner for applying for any role</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Team Page -->
+   <div id="team-page" class="page">
+    <section class="py-20 px-6 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <h1 class="text-5xl font-bold text-center mb-16 fade-in">Leadership Team</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+       <div class="bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 p-8 rounded-3xl shadow-xl text-white card-hover">
+        <div class="flex items-center mb-6"><span class="text-6xl mr-4">👑</span>
+         <h3 class="text-4xl font-bold">Owner / Head ✨</h3>
+        </div>
+        <div class="bg-white bg-opacity-20 p-8 rounded-2xl backdrop-blur-sm">
+         <p class="text-3xl font-bold mb-3">Mohammed Daniyal Shaikh</p>
+         <div class="flex items-center text-xl"><span class="mr-2">💬</span>
+          <p class="opacity-90">Discord: mdgaming2008.in</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-8 rounded-3xl shadow-xl text-white card-hover">
+        <div class="flex items-center mb-6"><span class="text-6xl mr-4">🌟</span>
+         <h3 class="text-4xl font-bold">Co-Owners ✨</h3>
+        </div>
+        <div class="space-y-4">
+         <div class="bg-white bg-opacity-20 p-6 rounded-2xl backdrop-blur-sm">
+          <p class="text-2xl font-bold mb-2">Subhaan Sayyad</p>
+          <div class="flex items-center"><span class="mr-2">💬</span>
+           <p class="opacity-90">Discord: warrior_yagami</p>
+          </div>
+         </div>
+         <div class="bg-white bg-opacity-20 p-6 rounded-2xl backdrop-blur-sm">
+          <p class="text-2xl font-bold mb-2">Devansh Bhardwaj</p>
+          <div class="flex items-center"><span class="mr-2">💬</span>
+           <p class="opacity-90">Discord: the_moneyguy</p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-green-400 to-emerald-600 p-8 rounded-3xl shadow-xl text-white card-hover">
+        <div class="flex items-center mb-6"><span class="text-6xl mr-4">💼</span>
+         <h3 class="text-4xl font-bold">CEO ✨</h3>
+        </div>
+        <div class="bg-white bg-opacity-20 p-8 rounded-2xl backdrop-blur-sm">
+         <p class="text-xl font-semibold opacity-90 mb-2">Chief Executive Officer</p>
+         <p class="text-2xl font-bold">Position Available</p>
+         <p class="text-sm opacity-80 mt-4">Join our team and lead GGTPL to new heights!</p>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-indigo-400 to-blue-600 p-8 rounded-3xl shadow-xl text-white card-hover">
+        <div class="flex items-center mb-6"><span class="text-6xl mr-4">📋</span>
+         <h3 class="text-4xl font-bold">AEO ✨</h3>
+        </div>
+        <div class="bg-white bg-opacity-20 p-8 rounded-2xl backdrop-blur-sm">
+         <p class="text-xl font-semibold opacity-90 mb-2">Assistant Executive Officer</p>
+         <p class="text-2xl font-bold">Position Available</p>
+         <p class="text-sm opacity-80 mt-4">We're looking for talented individuals!</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Contact Page -->
+   <div id="contact-page" class="page">
+    <section class="py-20 px-6 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <h1 id="contact-title" class="text-5xl font-bold text-center mb-12 fade-in">Get In Touch</h1>
+      <div class="grid md:grid-cols-2 gap-8">
+       <div class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 text-white p-12 rounded-3xl shadow-2xl card-hover">
+        <div class="text-6xl mb-6">
+         📍
+        </div>
+        <h3 class="text-3xl font-bold mb-6">Company Address</h3>
+        <p id="company-address" class="text-xl leading-relaxed whitespace-pre-line">Grand Gaming Technologies Private Limited Janapriyanagar Balapur X Road 500008 Hyderabad, Telangana, India</p>
+       </div>
+       <div class="space-y-6">
+        <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white p-8 rounded-2xl shadow-xl card-hover">
+         <div class="text-5xl mb-4">
+          📧
+         </div>
+         <h3 class="text-2xl font-bold mb-2">Contact Owner</h3>
+         <p class="text-lg opacity-90">For game development inquiries or to join our team, reach out via Discord</p>
+        </div>
+        <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white p-8 rounded-2xl shadow-xl card-hover">
+         <div class="text-5xl mb-4">
+          💬
+         </div>
+         <h3 class="text-2xl font-bold mb-2">Discord Community</h3>
+         <p class="text-lg opacity-90">Connect with our leadership team on Discord for faster responses</p>
+        </div>
+        <div class="bg-gradient-to-br from-pink-500 to-purple-600 text-white p-8 rounded-2xl shadow-xl card-hover">
+         <div class="text-5xl mb-4">
+          🕒
+         </div>
+         <h3 class="text-2xl font-bold mb-2">Business Hours</h3>
+         <p class="text-lg opacity-90">We're passionate about gaming 24/7! Reach out anytime.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Footer -->
+   <footer class="bg-gray-900 text-white py-10 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+     <p id="footer-text" class="text-xl">© 2024 Grand Gaming Technologies Private Limited. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      company_name: "Grand Gaming Technologies Private Limited",
+      tagline: "Building Amazing Gaming Experiences",
+      hero_description: "Registered company - Developed by Mohammad Daniyal Shaikh",
+      about_title: "About GGTPL",
+      about_description: "Grand Gaming Technologies Private Limited builds exceptional games across multiple genres including Roleplay, Horror, Adventure, Online Multiplayer, Single Player, Racing, Open World, FPS, Shooting Multiplayer, 5V5 Action, and both 2D & 3D games. We're passionate about creating immersive gaming experiences that players love.",
+      services_title: "Our Services",
+      game_request_title: "Want to Create a Game?",
+      game_request_description: "If you want to create a game of any type, you can simply contact the owner of the company. We'll work with you to bring your vision to life!",
+      join_title: "Join Our Team",
+      contact_title: "Get In Touch",
+      company_address: "Grand Gaming Technologies Private Limited\nJanapriyanagar Balapur X Road 500008\nHyderabad, Telangana, India",
+      footer_text: "© 2024 Grand Gaming Technologies Private Limited. All rights reserved.",
+      background_color: "#667eea",
+      surface_color: "#ffffff",
+      text_color: "#1f2937",
+      primary_action_color: "#7c3aed",
+      secondary_action_color: "#4f46e5",
+      font_family: "system-ui",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = 'system-ui, -apple-system, sans-serif';
+      
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      
+      document.getElementById('company-name').textContent = config.company_name || defaultConfig.company_name;
+      document.getElementById('company-name').style.fontSize = `${baseSize * 3}px`;
+      document.getElementById('company-name').style.color = config.surface_color || defaultConfig.surface_color;
+      
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('tagline').style.fontSize = `${baseSize * 1.5}px`;
+      
+      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('hero-description').style.fontSize = `${baseSize * 1.125}px`;
+      
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('about-title').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('about-title').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('about-description').textContent = config.about_description || defaultConfig.about_description;
+      document.getElementById('about-description').style.fontSize = `${baseSize * 1.25}px`;
+      document.getElementById('about-description').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+      document.getElementById('services-title').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('services-title').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('game-request-title').textContent = config.game_request_title || defaultConfig.game_request_title;
+      document.getElementById('game-request-title').style.fontSize = `${baseSize * 1.875}px`;
+      document.getElementById('game-request-title').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('game-request-description').textContent = config.game_request_description || defaultConfig.game_request_description;
+      document.getElementById('game-request-description').style.fontSize = `${baseSize * 1.125}px`;
+      document.getElementById('game-request-description').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('join-title').textContent = config.join_title || defaultConfig.join_title;
+      document.getElementById('join-title').style.fontSize = `${baseSize * 1.875}px`;
+      document.getElementById('join-title').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+      document.getElementById('contact-title').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('contact-title').style.color = config.text_color || defaultConfig.text_color;
+      
+      document.getElementById('company-address').textContent = config.company_address || defaultConfig.company_address;
+      document.getElementById('company-address').style.fontSize = `${baseSize * 1.25}px`;
+      
+      document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+      document.getElementById('footer-text').style.fontSize = `${baseSize * 1.25}px`;
+      
+      const header = document.querySelector('header');
+      if (header) {
+        header.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.primary_action_color || defaultConfig.primary_action_color} 100%)`;
+      }
+      
+      const nav = document.querySelector('nav');
+      nav.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.primary_action_color || defaultConfig.primary_action_color} 100%)`;
+      
+      document.querySelectorAll('.bg-white').forEach(el => {
+        if (!el.classList.contains('bg-opacity-20')) {
+          el.style.backgroundColor = config.surface_color || defaultConfig.surface_color;
+        }
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["company_name", config.company_name || defaultConfig.company_name],
+          ["tagline", config.tagline || defaultConfig.tagline],
+          ["hero_description", config.hero_description || defaultConfig.hero_description],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["about_description", config.about_description || defaultConfig.about_description],
+          ["services_title", config.services_title || defaultConfig.services_title],
+          ["game_request_title", config.game_request_title || defaultConfig.game_request_title],
+          ["game_request_description", config.game_request_description || defaultConfig.game_request_description],
+          ["join_title", config.join_title || defaultConfig.join_title],
+          ["contact_title", config.contact_title || defaultConfig.contact_title],
+          ["company_address", config.company_address || defaultConfig.company_address],
+          ["footer_text", config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    }
+
+    // Navigation functionality
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetPage = link.getAttribute('data-page');
+        
+        // Update active nav link
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Show target page
+        pages.forEach(page => {
+          page.classList.remove('active');
+          if (page.id === `${targetPage}-page`) {
+            page.classList.add('active');
+          }
+        });
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b580e6b769b538b',t:'MTc2Njk5ODI5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
